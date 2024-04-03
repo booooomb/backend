@@ -1,3 +1,3 @@
 # Version
-- Spring v3.2.3
+- Spring Boot v3.2.4
 - Java v17
