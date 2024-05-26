@@ -1,0 +1,7 @@
+spring.config.activate.on-profile: local
+
+spring:
+  application:
+    name: module-api
+server:
+  port: 6001
