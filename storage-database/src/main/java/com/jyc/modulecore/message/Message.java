@@ -31,4 +31,20 @@ public class Message {
     @CreationTimestamp
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
+    public Message() {
+    }
+
+    public Message(ChatRoom chatRoom, Integer userId, String contents) {
+        this.chatRoom = chatRoom;
+        this.userId = userId;
+        this.contents = contents;
+    }
+
+    public Message(ChatRoom chatRoom, Integer userId, String contents, LocalDateTime createdAt) {
+        this.chatRoom = chatRoom;
+        this.userId = userId;
+        this.contents = contents;
+        this.createdAt = createdAt;
+    }
 }
