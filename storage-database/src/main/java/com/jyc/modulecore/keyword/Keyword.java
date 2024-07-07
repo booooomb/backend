@@ -1,5 +1,6 @@
 package com.jyc.modulecore.keyword;
 
+import com.jyc.modulecore.Status;
 import com.jyc.modulecore.chat_room.ChatRoom;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -38,8 +39,23 @@ public class Keyword {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-}
 
-enum Status {
-    ACTIVE, ACTIVTE_PENDING, ARCHIVED, DELETED
+    public Keyword() {
+    }
+
+    public Keyword(String keyword, Integer rank, Status status, List<ChatRoom> chatRooms) {
+        this.keyword = keyword;
+        this.rank = rank;
+        this.status = status;
+        this.chatRooms = chatRooms;
+    }
+
+    public Keyword(String keyword, Integer rank, Status status, List<ChatRoom> chatRooms, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.keyword = keyword;
+        this.rank = rank;
+        this.status = status;
+        this.chatRooms = chatRooms;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
 }

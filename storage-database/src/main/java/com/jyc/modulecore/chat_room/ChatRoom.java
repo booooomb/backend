@@ -34,4 +34,13 @@ public class ChatRoom {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    public ChatRoom() {}
+
+    public ChatRoom(Keyword keyword, List<Message> messages, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.keyword = keyword;
+        this.messages = messages;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
 }
