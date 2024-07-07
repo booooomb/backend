@@ -20,16 +20,13 @@ spring:
       hibernate:
         format_sql: true
         show_sql: true
-  h2:
-    console:
-      enabled: true
 
   storage:
     datasource:
       core:
-        driver-class-name: org.h2.Driver
-        jdbc-url: jdbc:h2:mem:core;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-        username: sa
+        url: jdbc:mysql://127.0.0.1:3306/mydb?useUnicode=true&serverTimezone=Asia/Seoul
+        username: root
+        password: 1234
         pool-name: core-db-pool
         data-source-properties:
           rewriteBatchedStatements: true
