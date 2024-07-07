@@ -1,8 +1,7 @@
 services:
-  storage-database:
+  db:
     image: mysql:8.0
     container_name: booooomb-mysql
-    restart: always
     ports:
       - 3306:3306
     environment:
@@ -12,5 +11,6 @@ services:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
     volumes:
-      - ./database/datadir/:/var/lib/mysql
-      - ./database/init/:/docker_entrypoint-initdb.d/
+      - db:/var/lib/mysql
+volumes:
+  db:
